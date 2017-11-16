@@ -25,6 +25,16 @@
 #include "time.h"
 #include "math.h"
 
+#include "opencv2/imgcodecs.hpp"
+#include "opencv2/highgui.hpp"
+#include "opencv2/imgproc.hpp"
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <filesystem>
+
+using namespace cv;
+
 #define INPUT_WIDTH  (299)
 #define INPUT_HEIGHT (299)
 
@@ -297,6 +307,7 @@ int main(int argc, char* argv[]) {
 	// They define where the graph and input data is located, and what kind of
 	// input the model expects. If you train your own model, or use something
 	// other than inception_v3, then you'll need to update these.
+	cv::Mat cvmat;
 	string image = "grace_hopper.jpg";
 	string graph = "inception_v3_2016_08_28_frozen.pb";
 	string labels = "imagenet_slim_labels.txt";
